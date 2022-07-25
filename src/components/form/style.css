@@ -1,0 +1,29 @@
+.todo-form{
+  height: 8vh;
+  background-color: #e2bfe0;
+  border-radius: 10px;
+  display: flex;
+  padding:20px;
+  align-items: center;
+  justify-content: space-between;
+}
+div>label{
+  font-weight:bold;
+}
+div>input{
+  margin: 20px;
+  width: 15vw;
+  border:1px solid white;
+  border-radius: 10px;
+  height: 4vh;
+}
+
+.todo-button>button{
+  background-color: #496b7b;
+  width: 130px;
+  height: 4vh;
+  border-radius: 10px;
+  color: white;
+  font-weight:bold;
+  border:1px solid #496b7b;
+}

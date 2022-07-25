@@ -1,0 +1,30 @@
+.todo-box{
+  width: 250px;
+  height: 180px;
+  border:2px solid #107cb2;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+}
+.todo-title{
+  font-size: 20px;
+}
+.todo-btns{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.todo-btns>button{
+  width: 85px;
+  padding: 8px;
+  border: 2px solid #673ab7;
+  border-radius: 5px;
+  background: transparent;
+
+}
+
+.todo-btns>button:hover{
+  background-color: #673ab7 ;
+}

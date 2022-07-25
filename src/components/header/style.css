@@ -1,0 +1,7 @@
+.header{
+  border: 1px solid rgb(241 208 219);
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+ 
+}
