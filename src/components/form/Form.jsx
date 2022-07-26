@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
 import "./style.css"
 
-function Form({addTodo,todos}) {
+function Form({addTodo}) {
+
   const [title,setTitle]=useState('')
   const [input,setInput]=useState('')
   
@@ -9,7 +10,7 @@ function Form({addTodo,todos}) {
   const handleChange= (event)=>{
     setTitle(event.target.value)
   }
-  console.log(title)
+
   const onChange= (event)=>{
     setInput(event.target.value)
   }
@@ -19,14 +20,14 @@ function Form({addTodo,todos}) {
     const todo={
       todoTitle:title,
       todoInput:input,
-      id:todos.length+1,
+      id:Date.now(),
       isDone:false,
       }
-     
-    addTodo(todo);
+    title!==""&&input!==""? addTodo(todo):alert('입력하세요')
     setTitle('')
     setInput('')
   }
+  
 
   return (
     <form className='todo-form'onSubmit={submitTodo}>
