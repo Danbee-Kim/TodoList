@@ -6,7 +6,7 @@ import Layout from "../components/layout/Layout";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
-
+  
   const doneChange = (id) => {
     const doneList = todos.map((todo) => {
       if (todo.id === id) {
@@ -16,7 +16,7 @@ function TodoList() {
     });
     setTodos(doneList);
   };
-  // [{id:0,title:title,isDone:false},{id:1,title:title,isDone:true},{id:2,title:title,isDone:false}]
+ 
 
   const addTodo = (todo) => {
     const newTodos = [...todos, todo];

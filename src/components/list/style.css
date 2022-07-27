@@ -1,4 +1,8 @@
 .todo-listworking{
   display: flex;
- 
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.List{
+  margin: 30px;
 }

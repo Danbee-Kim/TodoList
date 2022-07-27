@@ -3,17 +3,21 @@ import "./style.css"
 
 function Form({addTodo}) {
 
-  const [title,setTitle]=useState('')
-  const [input,setInput]=useState('')
-  
-
-  const handleChange= (event)=>{
-    setTitle(event.target.value)
+  const [list,setList]=useState({
+    title:"",
+    input:"",
+  })
+ const {title,input}=list;  // 비구조화 할당을 통해 값 추출
+  console.log(list,"list")
+  const Change=(e)=>{
+    const{value,name}=e.target;  // 우선 e.target 에서 name 과 value 를 추출
+    console.log(name,value) 
+    console.log({...list}) 
+    setList({...list,   // 기존의 list 객체를 복사한 뒤
+      [name]:value}) // name 키를 가진 값을 value 로 설정
+    
   }
 
-  const onChange= (event)=>{
-    setInput(event.target.value)
-  }
 
   const submitTodo =(e)=>{
     e.preventDefault()
@@ -23,9 +27,11 @@ function Form({addTodo}) {
       id:Date.now(),
       isDone:false,
       }
-    title!==""&&input!==""? addTodo(todo):alert('입력하세요')
-    setTitle('')
-    setInput('')
+    todo.todoTitle!==""&&todo.todoInput!==""? addTodo(todo):alert('입력하세요')
+    setList(
+      {title:"",
+      input:""}
+    )
   }
   
 
@@ -33,9 +39,9 @@ function Form({addTodo}) {
     <form className='todo-form'onSubmit={submitTodo}>
       <div>
         <label htmlFor='title'>제목</label>
-        <input onChange={handleChange} id='title'type="text" value={title}/>
+        <input onChange={Change} id='title'type="text" value={title} name="title"/>
         <label htmlFor='text' >내용</label>
-        <input onChange={onChange} id='text'type="text" value={input}/>
+        <input onChange={Change} id='text'type="text" value={input} name="input"/>
       </div>
         <div className='todo-button'>
         <button type='submit'>추가하기</button>

@@ -2,8 +2,7 @@ import React from 'react'
 import "./style.css"
 
 function Todo({todo,removeTodo,doneChange}) {
-        
-console.log(doneChange)
+
 
   
   return (
